@@ -1,0 +1,12 @@
+.number{
+    position: relative;
+    top: 5px;
+    padding: 2px ;
+   color: green;
+    border-radius: 50%;
+}
+
+.me-auto{
+    display: flex;
+    justify-content: center;
+}
