@@ -1,30 +1,38 @@
-import React from 'react'
-import Counter from './counter';
-import { Container } from 'react-bootstrap';
+import { useState, useEffect } from "react";
+import ItemList from "./ItemList";
+import Data from "../data.json";
+import { useParams } from "react-router-dom";
+import { Heading, Center } from "@chakra-ui/react";
+const ItemListContainer = () => {
+  const { category } = useParams();
+  // console.log(category);
 
+   const [bikes, setBikes] = useState([]);
 
+     useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(Data);
+        const data = await response.json();
+        setBikes(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData();
+  }, []); 
 
-function ItemListContainer({greeting}) {
-
-    
-    
-    
-
+  const catFilter = Data.filter((ropa) => ropa.category === category);
   return (
     <div>
-        <Container>
-            <h1 className='text-center mt-10'>{greeting}</h1>
-
-          
-                
-            <Counter/>
-              
-                        
-            
-        </Container>
-      
+      <Center bg="#D6EAF8" h="100px" color="black">
+        <Heading as="h2" size="2xl">
+        Clothes by Category
+        </Heading>
+      </Center>
+      {category ? <ItemList bikes={catFilter} /> : <ItemList bikes={Data} />}
     </div>
-  )
-}
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;

@@ -1,37 +1,74 @@
-import React from 'react'
-
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import CartWidget from './CartWidget';
-import './NavBar.css';
-
-
-const NavBar= ({contador}) => {
-
-
-
+import React from "react";
+import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import {
+  Flex,
+  Box,
+  Spacer,
+  Heading,
+  Container,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+const NavBar = () => {
   return (
     <>
-    <Navbar bg="light" variant="light" className='shadow-lg'>
-        <Container>
-          <Navbar.Brand href="#home">TOPSHOP</Navbar.Brand>
-          <Nav className="me-auto text-center ">
-            <Nav.Link href="#home" className='text-center'>Home</Nav.Link>
-            <Nav.Link href="#Remeras" className='text-center'>Remeras</Nav.Link>
-            <Nav.Link href="#Pantalones" className='text-center'>Pantalones</Nav.Link>
-            <Nav.Link href="#Pantalones" className='text-center'>zapatos</Nav.Link>
-            <Nav.Link href="#Pantalones" className='text-center'>shorts/polleras</Nav.Link>
-          </Nav>
-            <Nav.Link  className='text-end'> <CartWidget/> </Nav.Link>
-            <p className='number'>0</p>
-        </Container>
-      </Navbar>
-    
-
+      <Container maxW="150rem" bg="pink.100" color="#262626">
+        <Flex alignItems="center" gap="2">
+         
+        
+          <Box p="10" w="300px" h="100">
+            <Heading size="md">
+              <Link to={"/"}>TOPSHOP</Link>
+            </Heading>
+          </Box>
+          <Spacer />
+          <Box>
+            <Menu>
+              <Link to={"/catalogue"}>
+                
+                  Catalogo de Ropa
+               
+              </Link>
+            </Menu>
+            <Menu>
+              <MenuButton
+                as={Button}
+                size="lg"
+                variant="outline"
+                
+                rightIcon={<ChevronDownIcon />}
+                m="5"
+              >
+                Productos
+              </MenuButton>
+              <MenuList className="menu-list">
+                <Link to={`/category/${"Remeras"}`}>
+                  <MenuItem>Remeras</MenuItem>
+                </Link>
+                <Link to={`/category/${"Pantalones"}`}>
+                  <MenuItem>Pantalones</MenuItem>
+                </Link>
+                <Link to={`/category/${"Shorts"}`}>
+                  <MenuItem>Shorts</MenuItem>
+                </Link>
+              </MenuList>
+            </Menu>
+          </Box>
+          <Spacer />
+          <Box p="10" w="300px" h="100">
+            <Link to={"/cart"}>
+              <CartWidget />
+            </Link>
+          </Box>
+        </Flex>
+      </Container>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
-
+export default NavBar;
