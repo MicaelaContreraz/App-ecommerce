@@ -1,51 +1,21 @@
 import React from "react";
-import ropa from "../assets/foto1.jpg";
-import {
-  Center,
-  Card,
-  CardBody,
-  Image,
-  Heading,
-  Text,
-  Divider,
-  Stack,
-  CardFooter,
-  Button,
-} from "@chakra-ui/react";
+
 import { Link } from "react-router-dom";
 
 
-const Item = ({ id, name, stock, category }) => {
-  return (
-    <div>
-      <div key={id}>
-        <Center p="1rem">
-          <Card className="card-main">
-            <CardBody>
-              <Image borderRadius="lg" src={ropa} />
-              <Stack mt="6" spacing="3">
-                <Heading size="md">{name}</Heading>
 
-                <Text color="blue.800" fontSize="l">
-                  Category: {category}
-                </Text>
-                <Text color="red.600" fontSize="xl">
-                  Stock: {stock}
-                </Text>
-              </Stack>
-            </CardBody>
-            <Divider />
-            <CardFooter className="card-footer">
-              <Center className="btn-center">
-                <Button variant="solid" colorScheme="blue">
-                  <Link to={`/item/${id}`}>Ver más</Link>
-                </Button>
-              </Center>
-            </CardFooter>
-          </Card>
-        </Center>
-      </div>
-    </div>
+const Item = ({ id, name, stock, category, img, price}) => {
+  return (
+    
+      <div className='tarjetas col-xl-3 mx-auto my-5 d-flex flex-column align-items-center'>
+            <img className='col-xl-10' src={img} alt={name}></img>
+            { <h4><strong>ID:</strong>  {id} </h4> }
+            <h4><strong>Nombre:</strong>  {name}</h4>
+            <h4><strong>Categoría:</strong>  {category}</h4>
+            
+            <h4 className="mt-20"><strong>Stock:</strong>  {stock}</h4>
+            <Link to={`/item/${id}`} className="btn btn-outline-secondary btn-lg ">Ver más</Link>
+        </div>
   );
 };
 

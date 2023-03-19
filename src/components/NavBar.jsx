@@ -17,11 +17,11 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 const NavBar = () => {
   return (
     <>
-      <Container maxW="150rem" bg="pink.100" color="#262626">
-        <Flex alignItems="center" gap="2">
+      <Container maxW="150rem" className="shadow" color="#262626" >
+        <Flex alignItems="center" gap="2" >
          
         
-          <Box p="10" w="300px" h="100">
+          <Box p="10" w="300px" h="100" className="nav">
             <Heading size="md">
               <Link to={"/"}>TOPSHOP</Link>
             </Heading>

@@ -1,27 +1,26 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
-import Data from "../data.json";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+
+
+
 const ItemDetailContainer = () => {
-  // const { id } = useParams();
+  const [data, setData] = useState([]);
 
-  // const [bikes, setBikes] = useState([]);
+  useEffect(() => {
+    const db = getFirestore();
+    const productCollection = collection(db, "ropa");
+    getDocs(productCollection).then((QuerySnapshot) => {
+      const products = QuerySnapshot.docs.map((doc) =>({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setData(products);
+    });
+  
+  }, []); 
 
-  /*   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(Data);
-        const data = await response.json();
-        setBikes(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchData();
-  }, []); */
-
-  // const bikeFilter = Data.filter((bike) => bike.id == id);
-
-  return <ItemDetail ropa={Data} />;
+  return <ItemDetail ropa={data} />;
 };
 
 export default ItemDetailContainer;

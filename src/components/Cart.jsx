@@ -14,29 +14,39 @@ import {
     CardBody,
     CardFooter,
     Text,
+    Image,
     GridItem,
     Flex,
   } from "@chakra-ui/react";
   import { useState, useContext } from "react";
   import { CartContext } from "../contexts/ShoppingCartContext";
-  
+  import { collection, getFirestore, addDoc } from "firebase/firestore"
+import SendOrder from "./SendOrder";
+
+
   const Cart = () => {
     const [cart, setCart] = useContext(CartContext);
-    const [userName, setUserName] = useState("");
-    const [userEmail, setUserEmail] = useState("");
-  
-    const handleSubmit = (e) => {
-      console.log(e);
-      e.preventDefault();
-      console.log(userName);
-      console.log(userEmail);
+     const [ orderId, setOrderId] = useState(null);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+
+     const db = getFirestore()
+
+
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    addDoc(ordersCollection, order).then(({id})=> setOrderId(id));
       alert("Formulario enviado");
-    };
-  
+  };
+  const order ={
+      name,
+      email
+  };
     const deleteId = cart.map((item) => {
       return item.id;
     });
   
+const ordersCollection=collection(db, "orden");
     return (
       <>
         <Center bg="#D6EAF8" h="100px" color="black">
@@ -49,13 +59,25 @@ import {
             <Container
               key={item.id}
               maxW="container.sm"
-              className="main-catalogue"
+              className="main-catalogue "
             >
-              <Card maxW="sm" m="3rem">
+              <Card maxW="sm" m="3rem" className="shadow">
                 <CardHeader>
-                  <Heading size="md">{item.name}</Heading>
+                  
+                  <Heading size="md">{item.name}
+                
+                  </Heading>
                 </CardHeader>
                 <CardBody>
+              
+                    <Image
+                      boxSize='100px'
+                      objectFit='cover'
+                      src={item.img}
+                      alt={item.name}
+                    />
+            
+                
                   <Text as="b">Quantity: {item.quantity}</Text>
                   <Text>Price: U$D {item.price}</Text>
                 </CardBody>
@@ -71,27 +93,9 @@ import {
             </Container>
           );
         })}
-        <Container className="cart-container">
-          <FormControl onSubmit={handleSubmit}>
-            <Box>
-              <FormLabel>Your name</FormLabel>
-              <Input type="text" onChange={(e) => setUserName(e.target.value)} />
-              <FormLabel>Email address</FormLabel>
-              <Input
-                type="email"
-                onChange={(e) => setUserEmail(e.target.value)}
-              />
-              <FormHelperText>We'll never share your email.</FormHelperText>
-            </Box>
-            <FormLabel>What do you want to tell us?</FormLabel>
-            <Textarea></Textarea>
-            <Box className="btn-send">
-              <Button type="submit" colorScheme="teal" variant="outline">
-                Send information
-              </Button>
-            </Box>
-          </FormControl>
-        </Container>
+        
+
+        <SendOrder/>
       </>
     );
   };

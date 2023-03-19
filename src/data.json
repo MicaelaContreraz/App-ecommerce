@@ -3,7 +3,7 @@
       "id": 1,
       "name": "Remera",
       "price": 100, 
-      "img":"",
+      "img":"https://markova.com/uploads/picture/image/51360/Z330NE_1.jpg",
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
       "stock": 3,
@@ -13,6 +13,7 @@
       "id": 2,
       "name": "Pantalones",
       "price": 200,
+      "img":"https://markova.com/uploads/picture/image/51767/Z831NE_1.jpg",
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
       "stock": 8,
@@ -22,6 +23,7 @@
       "id": 3,
       "name": "Shorts",
       "price": 300,
+      "img":"https://markova.com/uploads/picture/image/51914/Z815CD_2.jpg",
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
       "stock": 3,
@@ -31,9 +33,131 @@
       "id": 4,
       "name": "Remeras",
       "price": 400,
+      "img":"https://markova.com/uploads/ckeditor/pictures/991/der.jpg",
       "description":
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
       "stock": 5,
       "category": "Remeras"
+    },
+    {
+      "id": 5,
+      "name": "Remera Lea",
+      "price": 300,
+      "img":"https://markova.com/uploads/picture/image/52298/Z830NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 3,
+      "category": "Remeras"
+    },
+    {
+      "id": 6,
+      "name": "CIGARETTE MARTENS",
+      "price": 400,
+      "img":"https://markova.com/uploads/picture/image/51266/Z100NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 5,
+      "category": "Pantalones"
+    },
+    {
+      "id": 7,
+      "name": "SHORT SOFIA",
+      "price": 300,
+      "img":"https://markova.com/uploads/picture/image/49278/Y154_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 3,
+      "category": "Shorts"
+    },
+    {
+      "id": 8,
+      "name": "PANTALÓN SUKI",
+      "price": 400,
+      "img":"https://markova.com/uploads/picture/image/49083/Y123NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 5,
+      "category": "Pantalones"
+    },
+    {
+      "id": 9,
+      "name": "TOP NILLA",
+      "price": 300,
+      "img":"https://markova.com/uploads/picture/image/52195/Z603NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 3,
+      "category": "Remeras"
+    },
+    {
+      "id": 10,
+      "name": "JEAN WILLIAMS",
+      "price": 400,
+      "img":"https://markova.com/uploads/picture/image/51196/JN174AZ_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 5,
+      "category": "Pantalones"
+    },
+    {
+      "id": 11,
+      "name": "VESTIDO ABBY",
+      "price": 300,
+      "img":"https://markova.com/uploads/picture/image/51434/Z401NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 3,
+      "category": "Shorts"
+    },
+    {
+      "id": 12,
+      "name": "REMERA COUTURE",
+      "price": 400,
+      "img":"https://markova.com/uploads/picture/image/51581/Z705NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 5,
+      "category": "Remeras"
+    },
+    {
+      "id": 13,
+      "name": "LEGGINGS DONK",
+      "price": 300,
+      "img":"https://markova.com/uploads/picture/image/52253/Z195VV_2.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 3,
+      "category": "Pantalones"
+    },
+    {
+      "id": 14,
+      "name": "VESTIDO SHANICE",
+      "price": 400,
+      "img":"https://markova.com/uploads/picture/image/52321/Z452CD_2.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 5,
+      "category": "Shorts"
+    },
+    {
+      "id": 15,
+      "name": "REMERA MORACE",
+      "price": 300,
+      "img":"https://markova.com/uploads/picture/image/51744/Z827CD_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 3,
+      "category": "Remeras"
+    },
+    {
+      "id": 16,
+      "name": "LEGGINGS ORION",
+      "price": 400,
+      "img":"https://markova.com/uploads/picture/image/51732/Z194NE_1.jpg",
+      "description":
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+      "stock": 5,
+      "category": "Pantalones"
     }
+    
   ]
